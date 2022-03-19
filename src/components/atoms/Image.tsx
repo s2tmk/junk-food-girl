@@ -15,6 +15,7 @@ interface ImageProps {
   alt: string;
   width?: string;
   height?: string;
+  objectFit?: "fill" | "contain" | "cover";
 }
 
 export const Image: React.VFC<ImageProps> = ({
@@ -22,13 +23,14 @@ export const Image: React.VFC<ImageProps> = ({
   alt,
   width = "100%",
   height = "100%",
+  objectFit = "contain",
 }) => (
   <ImageDiv width={width} height={height}>
     <NextImage
       src={src}
       alt={alt}
       layout="fill"
-      objectFit="cover"
+      objectFit={objectFit}
       placeholder="blur"
       blurDataURL="/"
     />

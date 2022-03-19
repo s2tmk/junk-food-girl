@@ -15,7 +15,7 @@ const CoverTitleDiv = styled.div`
 
 export const TopSection = () => (
   <TopSectionDiv>
-    <Image src="/dummy-1.jpg" alt="girl eating tacos" />
+    <Image src="/dummy-1.jpg" alt="girl eating tacos" objectFit="cover" />
     <CoverTitleDiv>
       <Title title="女性 × ジャンクフード" />
     </CoverTitleDiv>
