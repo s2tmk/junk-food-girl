@@ -17,7 +17,7 @@ export const TopSection = () => (
   <TopSectionDiv>
     <Image src="/dummy-1.jpg" alt="girl eating tacos" objectFit="cover" />
     <CoverTitleDiv>
-      <Title title="女性 × ジャンクフード" />
+      <Title title="ジャンクフード×女性" />
     </CoverTitleDiv>
   </TopSectionDiv>
 );
