@@ -4,6 +4,7 @@ const TitleText = styled.text`
   font-size: 2.618em;
   writing-mode: vertical-rl;
   color: white;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", sans-serif;
 `;
 
 interface TitleProps {
