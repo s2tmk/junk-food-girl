@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Image } from "../atoms/Image";
 import { Header } from "../atoms/Header";
 import { Paragraph } from "../atoms/Paragraph";
+import { Twitter, Instagram } from "react-feather";
 
 const ProfSectionDiv = styled.div`
   display: flex;
@@ -25,19 +26,28 @@ const ProfIntroDiv = styled.div`
   margin-left: 2em;
 `;
 
+const ProfSnsDiv = styled.div`
+  display: flex;
+  gap: 1em;
+`;
+
 export const ProfSection = () => (
   <ProfSectionDiv>
     <Header header="Profile" />
     <ProfMainDiv>
       <Image
-        src="/murakami.jpg"
-        alt="girl eating tacos"
+        src="/ryomurakami.png"
+        alt="artist profile drawing"
         width="400px"
         height="400px"
       />
       <ProfIntroDiv>
         <Header isPrimary={false} header="Ryo Murakami" />
         <Paragraph text={`${process.env.NEXT_PUBLIC_PROFILE_TEXT}`} />
+        <ProfSnsDiv>
+          <Twitter />
+          <Instagram />
+        </ProfSnsDiv>
       </ProfIntroDiv>
     </ProfMainDiv>
   </ProfSectionDiv>
