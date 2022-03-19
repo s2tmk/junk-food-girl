@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const TitleText = styled.text`
-  font-size: 1.618em;
+  font-size: 2.618em;
   writing-mode: vertical-rl;
   color: white;
 `;

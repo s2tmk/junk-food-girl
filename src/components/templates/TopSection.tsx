@@ -10,7 +10,7 @@ const TopSectionDiv = styled.div`
 const CoverTitleDiv = styled.div`
   position: absolute;
   right: 4em;
-  top: 4em;
+  top: 6.472em;
 `;
 
 export const TopSection = () => (
