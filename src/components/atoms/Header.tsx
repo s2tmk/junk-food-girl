@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const HeaderText = styled.text<{ fontSize: "1.618em" | "1.414em" }>`
   font-size: ${({ fontSize }) => fontSize};
-  font-weight: bold;
 `;
 
 interface HeaderProps {

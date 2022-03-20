@@ -14,6 +14,19 @@ const GallerySectionDiv = styled.div`
 const GalleryMainDiv = styled.div`
   width: 100%;
   margin-top: 2em;
+  margin-bottom: 3em;
+`;
+
+const GalleryPageForwardBtn = styled.button`
+  border: none;
+  color: white;
+  background-color: #ea8aa0;
+  width: 16.18em;
+  height: 2.618em;
+  font-size: 1em;
+  &.active {
+    color: #eb4d72;
+  }
 `;
 
 export const GallerySection = () => {
@@ -46,6 +59,7 @@ export const GallerySection = () => {
           ))}
         </Slider>
       </GalleryMainDiv>
+      <GalleryPageForwardBtn>MORE</GalleryPageForwardBtn>
     </GallerySectionDiv>
   );
 };
