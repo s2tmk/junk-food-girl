@@ -26,7 +26,8 @@ const ProfMainDiv = styled.div`
 const ProfIntroDiv = styled.div`
   display: flex;
   flex-direction: column;
-  line-height: 1.414em;
+  line-height: 1.618em;
+  text-align: justify;
   gap: 1em;
   margin-top: 2em;
   ${media.greaterThan("medium")`

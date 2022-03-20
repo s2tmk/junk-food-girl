@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ContactSection } from "../components/templates/ContactSection";
 import { GallerySection } from "../components/templates/GallerySection";
 import { ProfSection } from "../components/templates/ProfSection";
 import { TopSection } from "../components/templates/TopSection";
@@ -6,6 +7,7 @@ import { GlobalStyle } from "../globalStyle";
 
 import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
+import { Footer } from "../components/templates/Footer";
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +22,8 @@ export default function Index() {
       <TopSection />
       <ProfSection />
       <GallerySection />
+      <ContactSection />
+      <Footer />
     </Container>
   );
 }
