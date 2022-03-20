@@ -8,8 +8,8 @@ import { Twitter, Instagram } from "react-feather";
 const ProfSectionDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 100%;
   margin-top: 4em;
 `;
 
@@ -26,13 +26,12 @@ const ProfMainDiv = styled.div`
 const ProfIntroDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
   line-height: 1.414em;
   gap: 1em;
-  margin-left: 2em;
-  ${media.lessThan("medium")`
-    margin-top: 2em`}
+  margin-top: 2em;
+  ${media.greaterThan("medium")`
+    margin-top: 0em;
+    margin-left: 2em`}
 `;
 
 const ProfSnsDiv = styled.div`
@@ -46,14 +45,14 @@ export const ProfSection = () => (
     <ProfMainDiv>
       <Image
         src="/ryomurakami-icon.png"
-        alt="artist profile icon"
+        alt="photographer profile icon"
         width="256px"
         height="256px"
       />
       <ProfIntroDiv>
         <Image
           src="/ryomurakami-name-no-spacing.png"
-          alt="artist profile name"
+          alt="photographer profile name"
           height="16px"
           width="140.78px"
           objectFit="contain"
