@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Image } from "../atoms/Image";
 import { Header } from "../atoms/Header";
 import Slider from "react-slick";
+import { useInView } from "react-intersection-observer";
+import { Button } from "../atoms/Button";
 
 const GallerySectionDiv = styled.div`
   display: flex;
@@ -9,24 +11,19 @@ const GallerySectionDiv = styled.div`
   align-items: center;
   margin-top: 4em;
   width: 100%;
+  opacity: 0.1;
+  transform: translate(0, 64px);
+  transition: all 1000ms;
+  &.scrollin {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 `;
 
 const GalleryMainDiv = styled.div`
   width: 100%;
   margin-top: 2em;
   margin-bottom: 3em;
-`;
-
-const GalleryPageForwardBtn = styled.button`
-  border: none;
-  color: white;
-  background-color: #ea8aa0;
-  width: 16.18em;
-  height: 2.618em;
-  font-size: 1em;
-  &.active {
-    color: #eb4d72;
-  }
 `;
 
 export const GallerySection = () => {
@@ -40,11 +37,25 @@ export const GallerySection = () => {
     arrows: false,
   };
 
+  const pushToGalleryPage = () => {
+    console.log("clicked!");
+  };
+
   // HACK: CMSなどから取得したい。
-  const imageNames = ["dummy-1.jpg", "dummy-2.jpg", "dummy-3.jpg"];
+  const imageNames = [
+    "dummy-image-1.jpeg",
+    "dummy-image-2.jpeg",
+    "dummy-image-3.jpeg",
+    "dummy-image-4.jpeg",
+    "dummy-image-5.jpeg",
+  ];
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
 
   return (
-    <GallerySectionDiv>
+    <GallerySectionDiv ref={ref} className={inView ? "scrollin" : ""}>
       <Header header="Gallery" />
       <GalleryMainDiv>
         <Slider {...sliderSetting}>
@@ -59,7 +70,7 @@ export const GallerySection = () => {
           ))}
         </Slider>
       </GalleryMainDiv>
-      <GalleryPageForwardBtn>MORE</GalleryPageForwardBtn>
+      <Button label="MORE" onClick={pushToGalleryPage} />
     </GallerySectionDiv>
   );
 };

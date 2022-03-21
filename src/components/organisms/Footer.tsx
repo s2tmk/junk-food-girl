@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Header } from "../atoms/Header";
 import { Paragraph } from "../atoms/Paragraph";
 
 const FooterDiv = styled.footer`
