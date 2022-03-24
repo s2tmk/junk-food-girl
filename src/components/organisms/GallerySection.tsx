@@ -4,6 +4,7 @@ import { Header } from "../atoms/Header";
 import Slider from "react-slick";
 import { useInView } from "react-intersection-observer";
 import { Button } from "../atoms/Button";
+import { useRouter } from "next/router";
 
 const GallerySectionDiv = styled.div`
   display: flex;
@@ -41,6 +42,7 @@ const ImageContainer = styled.div`
 `;
 
 export const GallerySection = () => {
+  const router = useRouter();
   const sliderSetting = {
     autoplay: true,
     dots: true,
@@ -53,6 +55,7 @@ export const GallerySection = () => {
 
   const pushToGalleryPage = () => {
     console.log("clicked!");
+    router.push("/gallery");
   };
 
   // HACK: CMSなどから取得したい。
