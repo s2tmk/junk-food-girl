@@ -10,17 +10,15 @@ const ContactSectionDiv = styled.div`
   width: 100%;
   margin-top: 4em;
   opacity: 0.1;
-  transform: translate(0, 64px);
   transition: all 1000ms;
   &.scrollin {
     opacity: 1;
-    transform: translate(0, 0);
   }
 `;
 
-const ProfMainDiv = styled.div`
-  width: 62.8%;
-  margin-top: 2em;
+const ContactMainDiv = styled.div`
+  width: 80%;
+  margin-top: 4em;
   line-height: 1.618em;
   text-align: justify;
 `;
@@ -30,10 +28,15 @@ export const ContactSection = () => {
 
   return (
     <ContactSectionDiv ref={ref} className={inView ? "scrollin" : ""}>
-      <Header header="Contact" />
-      <ProfMainDiv>
+      <Header
+        isPrimary={true}
+        fontFamily="Futura"
+        header="Contact"
+        position="left"
+      />
+      <ContactMainDiv>
         <Paragraph text={`${process.env.NEXT_PUBLIC_CONTACT_TEXT}`} />
-      </ProfMainDiv>
+      </ContactMainDiv>
     </ContactSectionDiv>
   );
 };

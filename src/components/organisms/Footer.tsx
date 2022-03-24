@@ -6,7 +6,7 @@ const FooterDiv = styled.footer`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 8em;
+  height: 4em;
   line-height: 1.618em;
   margin-top: 4em;
   background-color: #462930;
@@ -15,6 +15,6 @@ const FooterDiv = styled.footer`
 
 export const Footer = () => (
   <FooterDiv>
-    <Paragraph text="&copy; 2022 ムラカミリョウ" />
+    <Paragraph text="&copy; 2022 ムラカミリョウ" color="white" />
   </FooterDiv>
 );

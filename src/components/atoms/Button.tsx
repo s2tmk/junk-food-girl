@@ -11,6 +11,7 @@ const Btn = styled.button`
   &.active {
     background-color: #eb4d72;
   }
+  font-family: "Futura";
 `;
 
 interface ButtonProps {

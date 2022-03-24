@@ -9,21 +9,34 @@ import "/node_modules/slick-carousel/slick/slick.css";
 import "/node_modules/slick-carousel/slick/slick-theme.css";
 import { Footer } from "../components/organisms/Footer";
 
-const Container = styled.div`
+const RootContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
 `;
 
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @media (min-width: 1025px) {
+    width: 80%;
+  }
+`;
+
 const Index = () => (
-  <Container>
+  <RootContainer>
     <GlobalStyle />
-    <TopSection />
-    <ProfSection />
-    <GallerySection />
-    <ContactSection />
-    <Footer />
-  </Container>
+    <MainContainer>
+      <TopSection />
+      <ProfSection />
+      <GallerySection />
+      <ContactSection />
+      <Footer />
+    </MainContainer>
+  </RootContainer>
 );
 
 export default Index;

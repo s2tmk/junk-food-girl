@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import media from "styled-media-query";
 import { Image } from "../atoms/Image";
 import { Header } from "../atoms/Header";
+import { Name } from "../atoms/Name";
 import { Paragraph } from "../atoms/Paragraph";
 import { Twitter, Instagram } from "react-feather";
 import { useInView } from "react-intersection-observer";
@@ -13,22 +13,26 @@ const ProfSectionDiv = styled.div`
   width: 100%;
   margin-top: 4em;
   opacity: 0.1;
-  transform: translate(0, 64px);
   transition: all 1000ms;
   &.scrollin {
     opacity: 1;
-    transform: translate(0, 0);
   }
 `;
 
 const ProfMainDiv = styled.div`
-  width: 62.8%;
+  width: 80%;
   align-items: center;
+  flex-direction: column;
   display: flex;
-  ${media.lessThan("medium")`
-    margin-top: 2em;
-    flex-direction: column
-  `}
+  margin-top: 4em;
+  @media (min-width: 1025px) {
+    flex-direction: row;
+  }
+`;
+
+const ProfImageDiv = styled.div`
+  min-width: 192px;
+  height: 192px;
 `;
 
 const ProfIntroDiv = styled.div`
@@ -38,10 +42,10 @@ const ProfIntroDiv = styled.div`
   text-align: justify;
   gap: 1em;
   margin-top: 2em;
-  ${media.greaterThan("medium")`
+  @media (min-width: 1025px) {
     margin-top: 0em;
-    margin-left: 2em
-  `}
+    margin-left: 4em;
+  }
 `;
 
 const ProfSnsDiv = styled.div`
@@ -56,16 +60,22 @@ export const ProfSection = () => {
 
   return (
     <ProfSectionDiv ref={ref} className={inView ? "scrollin" : ""}>
-      <Header header="Profile" />
+      <Header
+        isPrimary={true}
+        fontFamily={"Futura"}
+        header="Profile"
+        position="left"
+      />
       <ProfMainDiv>
-        <Image
-          src="/ryomurakami-icon.png"
-          alt="photographer profile icon"
-          width="256px"
-          height="256px"
-        />
+        <ProfImageDiv>
+          <Image
+            src="/images/ryo.png"
+            alt="photographer profile icon"
+            objectFit="contain"
+          />
+        </ProfImageDiv>
         <ProfIntroDiv>
-          <Header isPrimary={false} header="ムラカミリョウ" />
+          <Name isPrimary={false} fontFamily="memoir" name="ムラカミリョウ" />
           <Paragraph text={`${process.env.NEXT_PUBLIC_PROFILE_TEXT}`} />
           <ProfSnsDiv>
             <Twitter />

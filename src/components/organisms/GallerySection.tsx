@@ -12,18 +12,32 @@ const GallerySectionDiv = styled.div`
   margin-top: 4em;
   width: 100%;
   opacity: 0.1;
-  transform: translate(0, 64px);
   transition: all 1000ms;
   &.scrollin {
     opacity: 1;
-    transform: translate(0, 0);
   }
 `;
 
 const GalleryMainDiv = styled.div`
   width: 100%;
-  margin-top: 2em;
+  margin-top: 4em;
   margin-bottom: 3em;
+`;
+
+const ImageDiv = styled.div`
+  margin: auto;
+  width: 256px;
+  height: 256px;
+  @media (min-width: 1025px) {
+    width: 512px;
+    height: 512px;
+  }
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const GallerySection = () => {
@@ -31,9 +45,9 @@ export const GallerySection = () => {
     autoplay: true,
     dots: true,
     infinite: true,
-    speed: 2000,
+    speed: 3000,
     centerMode: true,
-    centerPadding: "32px",
+    centerPadding: "64px",
     arrows: false,
   };
 
@@ -43,11 +57,10 @@ export const GallerySection = () => {
 
   // HACK: CMSなどから取得したい。
   const imageNames = [
-    "dummy-image-1.jpeg",
-    "dummy-image-2.jpeg",
-    "dummy-image-3.jpeg",
-    "dummy-image-4.jpeg",
-    "dummy-image-5.jpeg",
+    "elco_resized.jpg",
+    "hamburger_resized.jpg",
+    "noa_resized.jpg",
+    "rie_resized.jpg",
   ];
 
   const { ref, inView } = useInView({
@@ -56,17 +69,24 @@ export const GallerySection = () => {
 
   return (
     <GallerySectionDiv ref={ref} className={inView ? "scrollin" : ""}>
-      <Header header="Gallery" />
+      <Header
+        isPrimary={true}
+        fontFamily="Futura"
+        header="Gallery"
+        position="right"
+      />
       <GalleryMainDiv>
         <Slider {...sliderSetting}>
           {imageNames.map((name) => (
-            <Image
-              src={`/${name}`}
-              alt={`work name: ${name}`}
-              objectFit="cover"
-              height="512px"
-              key={name}
-            />
+            <ImageContainer key={name}>
+              <ImageDiv>
+                <Image
+                  src={`/images/${name}`}
+                  alt={`work name: ${name}`}
+                  objectFit="cover"
+                />
+              </ImageDiv>
+            </ImageContainer>
           ))}
         </Slider>
       </GalleryMainDiv>
