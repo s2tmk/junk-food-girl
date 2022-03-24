@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { Button } from "../components/atoms/Button";
-import { WorkGrid } from "../components/organisms/WorkGrid";
+import { GalleryGrid } from "../components/organisms/GalleryGrid";
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ const Container = styled.div`
   min-height: 100vh;
   padding-bottom: 8em;
   box-sizing: border-box;
-  position: relative;
+  /* position: relative; */
 `;
 
 const BackButtonDiv = styled.div`
@@ -32,9 +32,9 @@ const Gallery = () => {
 
   return (
     <Container>
-      <WorkGrid />
+      <GalleryGrid />
       <BackButtonDiv>
-        <Button label="Back" onClick={BackToTopPage} />
+        <Button label="BACK" onClick={BackToTopPage} />
       </BackButtonDiv>
     </Container>
   );
